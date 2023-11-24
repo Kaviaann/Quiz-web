@@ -1,0 +1,123 @@
+*{
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Outfit', sans-serif;
+}
+
+body{
+    background-color: rgb(242, 230, 230);
+}
+
+
+/* Header */
+.header{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.header .headerName{
+    margin-inline: 25px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1.5px 10px;
+    border-radius: 5px;
+}
+
+.header .information{
+    margin-inline: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.header .information .headerPoint{
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2.5px 10px;
+    border-radius: 5px;
+}
+
+.header .information #finishBtn{
+    padding: 1.5px 10px;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+
+/* Main */
+
+.main{
+    margin-inline: auto;
+    margin-block: 75px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+    max-width: 550px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.119);
+}
+
+.main .question-container{
+    background-color: rgba(206, 171, 171, 0.16);
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.main .question-container .question{
+    background-color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+}
+
+.main #options{
+    list-style: none;
+    background-color: rgba(206, 171, 171, 0.16);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main #options .answer{
+    background-color: rgb(255, 255, 255);
+    padding: 12.5px 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.313);
+    cursor: pointer;
+}
+
+.main #options .answer input,
+.main #options .answer label{
+    cursor: pointer;
+}
+
+.main .button{
+    background-color: rgba(206, 171, 171, 0.16);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.main .button button{
+    /* font-weight: bold; */
+    font-size: 15px;
+    padding: 5px 25px;
+    border-radius: 5px;
+    border: 1.5px solid rgba(0, 0, 0, 0.21);
+    background-color: white;
+    cursor: pointer;
+}

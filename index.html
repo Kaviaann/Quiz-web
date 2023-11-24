@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Web view -->
+    <title>Quiz Game - Main</title>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Js -->
+    <script src="/main.js" defer></script>
+
+</head>
+
+<body>
+    
+    <div class="header">
+        <h3 class="headerName">Quiz Game</h3>
+
+        <div class="information">
+            <h4 class="headerPoint">Done : <span id="point">0</span></h4>
+            <button id="finishBtn">Finish?</button>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="question-container">
+            <div class="question">
+                <span id="number"></span>
+                <span id="question"></span>
+            </div>
+        </div>
+
+        <ul id="options">
+
+<!--        <li class="answer">
+                <input type="radio" name="answer" id="answer1">
+                <label>Ludwigyelstein</label>
+            </li> -->
+
+        </ul>
+
+        <div class="button">
+            <button id="beforeBtn">Before</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
