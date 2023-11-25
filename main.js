@@ -12,7 +12,7 @@ const answerClass = document.getElementsByClassName('answer');
 const answer = Array.from(answerClass)
 const questions = [
     {
-        question : "Siapa nama pembuat quesioner ini?",
+        question : "Who is the creator of this questioner?",
         options : ["Ludwigyelstein", "NovelLikeToEat", "LunaGoesToMoon", "KaviaannLikeToSleep"],
         corAnswer : "Ludwigyelstein",
         selected : ''
@@ -33,16 +33,10 @@ finishBtn.addEventListener('click', getFinish)
 
 
 // Next Btn
-nextBtn.addEventListener('click', () => {
-    page >= questions.length-1 ? page = questions.length-1 : page++
-    loadQuest(page);
-})
+nextBtn.addEventListener('click', getNext)
 
 // Before Btn
-beforeBtn.addEventListener('click', () => {
-    page <= 0 ? page = 0 : page--
-    loadQuest(page);
-})
+beforeBtn.addEventListener('click', getBefore)
 
 
 // Function
@@ -52,10 +46,10 @@ loadQuest(page);
 // LoadQuest
 function loadQuest(index){
     const quest = questions[index];
-
+    
     optionsParent.innerHTML = ''
-
-    if(index > -1 && index < questions.length){
+    
+    if(index >= 0 && index <= questions.length-1 && page >= questions.length-1){
         questionId.innerHTML = `${index+1}.`
         question.innerHTML = quest.question;
 
@@ -80,30 +74,49 @@ function loadQuest(index){
             optionsParent.appendChild(li);
         });
 
+        nextBtn.innerHTML = "Finish";
+        nextBtn.removeEventListener('click', getNext);
+        nextBtn.addEventListener('click', getFinish);
+
     }
+    
+    else if(index >= 0 && index <= questions.length-1){
+        questionId.innerHTML = `${index+1}.`
+        question.innerHTML = quest.question;
+
+        quest.options.forEach((e, index) => {
+            const li = document.createElement('li');
+            li.className = 'answer';
+
+            li.innerHTML = `
+                <input type="radio" name="answer" id="answer${index}">
+                <label>${e}</label>
+            `
+
+            li.addEventListener('click', () => {
+                li.querySelector(`input[type="radio"]`).checked = true;
+                quest.selected = e;
+            })
+
+            if(e == quest.selected){
+                li.querySelector(`input[type="radio"]`).checked = true;
+            }
+
+            optionsParent.appendChild(li);
+        });
+
+        nextBtn.innerHTML = "Next";
+        nextBtn.removeEventListener('click', getFinish);
+        nextBtn.addEventListener('click', getNext);
+
+    };
+
 }
 
 
 // Next page
 function getNext(){
-    page >= questions.length-1 
-    ?() => {
-        page = questions.length-1
-        if(nextBtn.innerHTML == "Next"){
-            nextBtn.innerHTML = "Finish";
-            nextBtn.removeEventListener('click');
-            nextBtn.addEventListener('click', getFinish);
-        }
-    }
-    :() => {
-        page++
-        if(nextBtn == "Finish"){
-            nextBtn.innerHTML = "Next";
-            nextBtn.removeEventListener('click');
-            nextBtn.addEventListener('click', getNext);
-        }
-    } 
-
+    page >= questions.length-1 ? page = questions.length-1 : page ++
     loadQuest(page);
 }
 
@@ -117,10 +130,5 @@ function getBefore(){
 
 // Get Finish
 function getFinish(){
-    questions.forEach((e, index) => {
-        if(e.selected != ''){
-            const answer = e.selected;
-            alert(e.selected == e.corAnswer ? `Answer : ${e.selected} are correct!` : `Answer : ${e.selected} are wrong :(`)
-        }
-    })
+
 }
