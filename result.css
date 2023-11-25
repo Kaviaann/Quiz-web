@@ -1,0 +1,132 @@
+*{
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Outfit', sans-serif;
+}
+
+body{
+    background-color: rgb(242, 230, 230);
+}
+
+
+/* Header */
+.header{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.header .headerName{
+    margin-inline: 25px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1.5px 10px;
+    border-radius: 5px;
+}
+
+.header .information{
+    margin-inline: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.header .information .headerPoint{
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2.5px 10px;
+    border-radius: 5px;
+}
+
+.header .information button{
+    padding: 1.5px 10px;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+
+/* res */
+.res{
+    background-color: green;
+    margin-block: 50px;
+    padding: 25px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* res header */
+.res .resHeader{
+    background-color: white;
+    padding: 2.5px 10px;
+    margin-bottom: 25px;
+}
+
+
+/* res main */
+.res .resMain{
+    background-color: rgb(242, 230, 230);
+    padding: 5px 15px;
+    margin-bottom: 10px;
+}
+
+.res .resMain .result{
+    background-color: blueviolet;
+    padding: 15px 20px;
+    margin-block: 10px 25px;
+}
+
+.res .resMain .result #corAnswerValue{
+    background-color: green;
+    padding: 1.5px 2.5px;
+}
+
+.res .resMain .result #wroAnswerValue{
+    background-color: red;
+    padding: 1.5px 2.5px;
+}
+
+.res .resMain .quiz{
+    margin-block: 0px 10px;
+    border: 1.5px solid rgba(0, 0, 0, 0.146);
+    border-radius: 5px;
+}
+
+.res .resMain .quiz #quizAns{
+    list-style: none;
+    background-color: white;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.res .resMain .quiz #quizAns .answer{
+    background-color:darkturquoise;
+    padding: 10px 25px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.res .resMain .quiz #quizAns .answer #question{
+    background-color: white;
+    padding: 1.5px 10px;
+    border-radius: 2.5px;
+    margin-bottom: 15px;
+}
+
+.res .resMain .quiz #quizAns .answer #choice,
+.res .resMain .quiz #quizAns .answer #corAnswer{
+    background-color: beige;
+    margin-bottom: 5px;
+    padding: 5px 15px;
+}

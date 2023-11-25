@@ -31,7 +31,6 @@ const questions = [
 // Finish Btn
 finishBtn.addEventListener('click', getFinish)
 
-
 // Next Btn
 nextBtn.addEventListener('click', getNext)
 
@@ -129,6 +128,33 @@ function getBefore(){
 
 
 // Get Finish
-function getFinish(){
+function getFinish() {
+    let data = []
 
+    questions.forEach((e, index) => {
+        if(e.selected !== '' && e.selected == e.corAnswer){
+            const pushedData = [
+                e.question, {
+                    corAnswer : e.corAnswer,
+                    selected : e.selected
+                }
+            ]
+
+            data.push(pushedData);
+        }
+
+        else{
+            const pushedData = [
+                e.question, {
+                    corAnswer : e.corAnswer,
+                    selected : false
+                }
+            ]
+
+            data.push(pushedData);
+        }
+    });
+
+    localStorage.setItem('information', JSON.stringify(data, null, 2));
+    window.location = '/result.html';
 }
