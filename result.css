@@ -9,6 +9,10 @@ body{
     background-color: rgb(242, 230, 230);
 }
 
+.hide{
+    display: none;
+}
+
 
 /* Header */
 .header{
@@ -54,8 +58,8 @@ body{
 
 /* res */
 .res{
-    background-color: green;
-    margin-block: 50px;
+    background-color: hsl(0, 1%, 52%);
+    /* margin-block: 0px 0px; */
     padding: 25px 50px;
     display: flex;
     flex-direction: column;
@@ -69,6 +73,7 @@ body{
     background-color: white;
     padding: 2.5px 10px;
     margin-bottom: 25px;
+    border-radius: 2.5px;
 }
 
 
@@ -77,28 +82,37 @@ body{
     background-color: rgb(242, 230, 230);
     padding: 5px 15px;
     margin-bottom: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    border-radius: 5px;
 }
 
 .res .resMain .result{
-    background-color: blueviolet;
+    background-color: white;
     padding: 15px 20px;
-    margin-block: 10px 25px;
+    margin-block: 10px 15px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.235);
 }
 
 .res .resMain .result #corAnswerValue{
     background-color: green;
+    color: white;
     padding: 1.5px 2.5px;
 }
 
 .res .resMain .result #wroAnswerValue{
     background-color: red;
+    color: white;
     padding: 1.5px 2.5px;
 }
 
 .res .resMain .quiz{
     margin-block: 0px 10px;
-    border: 1.5px solid rgba(0, 0, 0, 0.146);
-    border-radius: 5px;
+    /* border: 1.5px solid rgba(0, 0, 0, 0.146); */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.235);
 }
 
 .res .resMain .quiz #quizAns{
@@ -107,6 +121,7 @@ body{
     padding: 10px 10px;
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .res .resMain .quiz #quizAns .answer{
@@ -129,4 +144,30 @@ body{
     background-color: beige;
     margin-bottom: 5px;
     padding: 5px 15px;
+    border-radius: 2.5px;
+}
+
+.res .resMain .quiz #quizAns .answer ion-icon{
+    position: relative;
+    top: 2.90px;
+}
+
+.res .resButton{
+    margin-block: 10px 15px;
+    /* background-color: burlywood; */
+}
+
+.res .resButton button{
+    padding: 5px 15px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.resFooter{
+    background-color: white;
+    /* margin-block: 25px; */
+    padding-block: 30px 25px;
+    padding-inline: 10px;
 }
