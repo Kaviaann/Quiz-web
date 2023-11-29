@@ -132,7 +132,7 @@ function getFinish() {
     let data = []
 
     questions.forEach((e, index) => {
-        if(e.selected !== '' && e.selected == e.corAnswer){
+        if(e.selected !== '' && e.selected){
             const pushedData = [
                 e.question, {
                     corAnswer : e.corAnswer,
@@ -147,7 +147,7 @@ function getFinish() {
             const pushedData = [
                 e.question, {
                     corAnswer : e.corAnswer,
-                    selected : false
+                    selected : ''
                 }
             ]
 
@@ -155,6 +155,6 @@ function getFinish() {
         }
     });
 
-    localStorage.setItem('information', JSON.stringify(data, null, 2));
+    localStorage.setItem('score', JSON.stringify(data, null, 2));
     window.location = '/result.html';
 }
